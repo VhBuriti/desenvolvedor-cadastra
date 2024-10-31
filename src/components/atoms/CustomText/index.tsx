@@ -1,13 +1,13 @@
 import React, { ElementType } from "react";
 
 interface CustomTextProps {
-    tag: ElementType;
+    tag?: ElementType;
     text: string;
 }
 
-const CustomText = ({tag: Tag = "p", text}: CustomTextProps) => {
+const CustomText = ({tag: Tag = "p", text, ...props}: CustomTextProps) => {
     return (
-        <Tag>
+        <Tag className="custom-text" {...props}> 
             {text}
         </Tag>
     )

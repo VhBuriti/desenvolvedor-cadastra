@@ -1,0 +1,50 @@
+@import "../../../scss/main.scss";
+
+.product-card {
+    width: 162px;
+    text-align: center;
+    [data-product-title] {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 19.07px;
+        margin: 8.02px 0 7.98px;
+        @include desktop {
+            margin: 10.97px 0 10.18px;
+        }
+    }
+    [data-product-price],
+    [data-product-installments] {
+        font-size: 16px;
+        line-height: 21.79px;
+        font-weight: 700;
+    }
+    [data-product-installments] {
+        font-weight: 400;
+        color: $secondary-gray;
+    }
+    [data-product-btn] {
+        background-color: $base-text;
+        color: $reverted-text;
+        font-size: 14px;
+        line-height: 19.07px;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: none;
+        width: 100%;
+        padding: 7px 0;
+        margin-top: 11.71px;
+        @include desktop {
+            padding: 7.28px 0;
+            margin-top: 14.24px;
+        }
+    }
+    [data-product-image] {
+        height: 242.55px;
+        @include desktop {
+            height: 293px;
+        }
+    }
+    @include desktop {
+        width: 195px;
+    }
+} 

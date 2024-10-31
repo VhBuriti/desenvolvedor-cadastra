@@ -1,0 +1,18 @@
+@import "../../../scss/variables.scss";
+
+.footer-container {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center; 
+    background-color: $base-text;
+    .custom-text {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 19.07px;
+        color: $reverted-text;
+        margin: 7px 0;
+    }
+}

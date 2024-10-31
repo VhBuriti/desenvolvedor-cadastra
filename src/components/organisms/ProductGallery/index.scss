@@ -1,0 +1,34 @@
+@import "../../../scss/main.scss";
+
+.product-gallery {
+  [data-gallery-products-grid] {
+    display: grid;
+    gap: 19px 18px;
+    grid-template-columns: repeat(2, 1fr);
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 64px 42px;
+    }
+  }
+
+  [data-gallery-show-more-container] {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40.65px 0 42px;
+
+    [data-gallery-show-more] {
+      width: 175px;
+      height: 35px;
+      text-align: center;
+      border: none;
+      text-transform: uppercase;
+      color: $reverted-text;
+      background-color: $primary;
+    }
+
+    @include desktop {
+      margin-top: 70px 0 35px;
+    }
+  }
+}
