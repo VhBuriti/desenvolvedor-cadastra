@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useProducts } from "../../../hooks/useProducts";
-import ProductCard from "../../molecules/ProductCard";
+import ProductCard from "../ProductCard";
 import { FormatInstallment } from "../../../utils/FormatInstallment";
 import { formatPrice } from "../../../utils/FormatPrice";
 
