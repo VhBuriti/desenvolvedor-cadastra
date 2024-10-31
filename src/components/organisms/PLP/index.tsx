@@ -6,15 +6,14 @@ const PLP = () => {
 
     const [facets, setFacets] = useState([]);
 
-    const handleOnFacetChange = (facet: string[]) => {
+    const handleOnFacetChange = (facet: any[]) => {
         setFacets(facet);
     };
 
-    console.log('facets', facets)
     return (
         <div>
             <Filter onFacetChange={handleOnFacetChange}/>
-            <ProductGallery />
+            <ProductGallery facets={facets}/>
         </div>
     )
 }

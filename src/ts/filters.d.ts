@@ -1,3 +1,7 @@
 interface FiltersProps {
-    onFacetChange: (facets: string[]) => void;
+  onFacetChange: (facets: any[]) => void;
 }
+
+type Filters = {
+  facets: string[];
+};
