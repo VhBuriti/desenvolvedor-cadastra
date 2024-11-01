@@ -8,5 +8,5 @@ Após a instalação de todas as dependências, para iniciar os servidores de de
 
 ## Contato
 
-E-mail para contato: victorhugoburiti@hotmail.com
+E-mail para contato: victorhugoburiti@hotmail.com\
 Linkedin: https://www.linkedin.com/in/victorburiti/
