@@ -58,6 +58,11 @@
     [data-listing-content] {
       display: flex;
       gap: 48px;
+      flex-wrap: wrap;
+      .filter, 
+      .product-gallery  {
+        flex: 1 0 0; 
+      }
     }
   }
 }

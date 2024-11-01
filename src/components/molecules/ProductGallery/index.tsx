@@ -8,9 +8,12 @@ import CustomButton from "../../atoms/Button";
 import { useFilterProducts } from "../../../hooks/useFilterProducts";
 import OrderBy from "../../../utils/OrderBy";
 
-const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy, isMobile }) => {
-
-  const productsCount = isMobile ? 4 : 9
+const ProductGallery: React.FC<ProductGalleryProps<string>> = ({
+  facets,
+  orderBy,
+  isMobile,
+}) => {
+  const productsCount = isMobile ? 4 : 9;
   const [products, setProducts] = useState([]);
   const [visibleCount, setVisibleCount] = useState(productsCount);
   const [galleryProducts, setGalleryProducts] = useState([]);
@@ -22,35 +25,39 @@ const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy
     })();
   }, []);
 
-
   useEffect(() => {
     const filteredProducts = useFilterProducts(products, { facets });
     const orderedProducts = OrderBy({ products: filteredProducts, orderBy });
-    
+
     setGalleryProducts(orderedProducts);
     setVisibleCount(productsCount);
   }, [products, facets, orderBy]);
 
   const handleShowMore = () => {
-    setVisibleCount((prevCount) => Math.min(prevCount + productsCount, galleryProducts.length));
+    setVisibleCount((prevCount) =>
+      Math.min(prevCount + productsCount, galleryProducts.length)
+    );
   };
 
   return (
-    <div className="product-gallery">
-      <div data-gallery-products-grid>
-        {galleryProducts.slice(0, visibleCount).map((product: Product, id: number) => {
-          return (
-            <ProductCard
-              key={id}
-              name={product.name}
-              price={formatPrice(product.price)}
-              installment={FormatInstallment(product.parcelamento)}
-              image={`${process.env.PUBLIC_URL}${product.image}`}
-            />
-          )
-        })}
+    <>
+      <div className="product-gallery">
+        <div data-gallery-products-grid>
+          {galleryProducts
+            .slice(0, visibleCount)
+            .map((product: Product, id: number) => {
+              return (
+                <ProductCard
+                  key={id}
+                  name={product.name}
+                  price={formatPrice(product.price)}
+                  installment={FormatInstallment(product.parcelamento)}
+                  image={`${process.env.PUBLIC_URL}${product.image}`}
+                />
+              );
+            })}
+        </div>
       </div>
-      
       <div data-gallery-show-more-container>
         {visibleCount < galleryProducts.length && (
           <CustomButton
@@ -60,7 +67,7 @@ const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy
           />
         )}
       </div>
-    </div>
+    </>
   );
 };
 

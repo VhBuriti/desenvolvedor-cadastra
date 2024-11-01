@@ -9,29 +9,34 @@
     padding: 0 4.27%;
     grid-template-columns: repeat(auto-fit, minmax(162px, 1fr)); 
     @include desktop {
-      gap: 64px 42px;
-      margin: 70px 0 35px;
+      gap: 42px 64px;
+      margin: 0;
       max-width: 976px;
+      padding: 0;
+      grid-template-columns: repeat(3, 1fr); 
       .product-card {
         margin: 0 auto;
       }
     }
   }
+  @include desktop {
+    max-width: 976px;
+  }
+}
 
-  [data-gallery-show-more-container] {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 40.65px 0 42px;
+[data-gallery-show-more-container] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40.65px 0 42px;
 
-    [data-gallery-show-more] {
-      width: 175px;
-      height: 35px;
-      text-align: center;
-      border: none;
-      text-transform: uppercase;
-      color: $reverted-text;
-      background-color: $primary;
-    }
+  [data-gallery-show-more] {
+    width: 175px;
+    height: 35px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    color: $reverted-text;
+    background-color: $primary;
   }
 }
