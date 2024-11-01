@@ -1,0 +1,75 @@
+@import '../../../scss/main.scss';
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    [data-filter-colors], 
+    [data-filter-prices]  {
+        display: flex;
+        flex-direction: column;
+        [data-filter-section-title] {
+            margin-bottom: 14px;
+        }
+        .input-checkbox {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            margin-bottom: 17px;
+            [data-checkbox-label] {
+                width: 14px;
+                display: block;
+                width: fit-content;
+                line-height: 14px;
+                margin-left: 10px;
+            }
+            [data-checkbox-select] {
+                margin: 0;
+                border: 1px solid $primary-gray;
+                border-radius: 0;
+                -webkit-appearance: none;
+                appearance: none; 
+                width: 16px;
+                height: 16px;
+                box-shadow: inset 0 0 0 2px #ffffff;
+                &:checked {
+                    background-color: $primary;
+                }
+            }
+            @include desktop {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    [data-filter-section-title] {
+        font-size: 16px;
+        line-height: 21.79px;
+        text-transform: uppercase;
+        color: $darker-gray;
+    }
+    [data-filter-sizes] {
+        width: 153px;
+        margin: 24px 0;
+        [data-filter-section-title] {
+            margin-bottom: 24px;
+        }
+        [data-filter-sizes-container] {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 8px;
+            .custom-button {
+                width: 32px;
+                height: 32px;
+                text-align: center;
+                border: 1px solid $primary-gray;
+                color: $primary-gray;
+                background-color: transparent;
+            }
+            [data-selected="true"] {
+                border-color: $primary;
+                color: $base-text;
+            }
+        }
+    }
+}

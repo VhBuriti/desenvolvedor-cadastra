@@ -1,7 +1,7 @@
 import React from "react"
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    label: string;
+    label: string | React.ReactNode;
 }
 
 const CustomButton = ({label, ...props}: ButtonProps) => {

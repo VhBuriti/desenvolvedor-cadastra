@@ -44,8 +44,8 @@ const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy
               installment={FormatInstallment(product.parcelamento)}
               image={`${process.env.PUBLIC_URL}${product.image}`}
             />
-          );
-        })};
+          )
+        })}
       </div>
       <div data-gallery-show-more-container>
         {visibleCount < galleryProducts.length && (

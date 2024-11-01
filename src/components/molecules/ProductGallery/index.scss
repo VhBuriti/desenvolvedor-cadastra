@@ -1,6 +1,8 @@
 @import "../../../scss/main.scss";
 
 .product-gallery {
+  width: 100%;
+  max-width: 976px;
   [data-gallery-products-grid] {
     display: grid;
     gap: 19px 18px;
@@ -8,6 +10,9 @@
     @include desktop {
       grid-template-columns: repeat(3, 1fr);
       gap: 64px 42px;
+      .product-card {
+        margin: 0 auto
+      }
     }
   }
 

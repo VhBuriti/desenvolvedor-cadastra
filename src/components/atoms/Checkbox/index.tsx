@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomText from '../CustomText';
 
 interface CheckboxProps {
   checked: boolean; 
@@ -12,13 +13,14 @@ const Checkbox: React.FC<CheckboxProps> = ({ checked, onChange, label }) => {
   };
 
   return (
-    <label style={{ cursor: 'pointer' }}>
+    <label className='input-checkbox'>
       <input
         type="checkbox"
         checked={checked}
         onChange={handleChange}
+        data-checkbox-select
       />
-      <span>{label}</span>
+      <CustomText data-checkbox-label text={label}/>
     </label>
   );
 };

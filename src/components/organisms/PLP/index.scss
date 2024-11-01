@@ -1,0 +1,46 @@
+@import "../../../scss/main.scss";
+
+.product-listing-page {
+    [data-plp-header] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 24px 0 12px 0;
+        
+        .custom-text {
+            font-size: 32px;
+            line-height: 43.58px;
+            color: $darker-gray;
+            height: 44px;
+        }
+        
+        .orderby-button {
+            width: 142px;
+            height: 42px;
+            font-size: 16px;
+            line-height: 21.79px;
+            border: 1px solid $primary-gray;
+            padding: 10px 0 10px 10px;
+            
+            [data-orderby-option] {
+                background-color: $reverted-text;
+                color: $base-text;
+                padding: 10px 0 10px 10px;
+            }
+        }
+        
+        @include desktop {
+            margin: 40px 0 65px 0;
+        }
+    }
+    
+    @include desktop {
+        width: 79%;
+        margin: 0 auto;
+        [data-listing-content] {
+            display: flex;
+            gap: 48px;
+        }
+    }
+}
