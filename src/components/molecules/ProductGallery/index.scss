@@ -2,16 +2,18 @@
 
 .product-gallery {
   width: 100%;
-  max-width: 976px;
+  
   [data-gallery-products-grid] {
     display: grid;
-    gap: 19px 18px;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 19px;
+    padding: 0 4.27%;
+    grid-template-columns: repeat(auto-fit, minmax(162px, 1fr)); 
     @include desktop {
-      grid-template-columns: repeat(3, 1fr);
       gap: 64px 42px;
+      margin: 70px 0 35px;
+      max-width: 976px;
       .product-card {
-        margin: 0 auto
+        margin: 0 auto;
       }
     }
   }
@@ -30,10 +32,6 @@
       text-transform: uppercase;
       color: $reverted-text;
       background-color: $primary;
-    }
-
-    @include desktop {
-      margin-top: 70px 0 35px;
     }
   }
 }

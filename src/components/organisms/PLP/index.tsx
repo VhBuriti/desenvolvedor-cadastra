@@ -15,10 +15,11 @@ const PLP = () => {
 
   const [facets, setFacets] = useState([]);
   const [orderBy, setOrderBy] = useState<OrderBy>("default");
-  const [isFilterModalOpen, setFilterModalOpen] = useState(false);
 
   const handleOrderByChange = (
-    event: React.ChangeEvent<HTMLSelectElement> | React.MouseEvent<HTMLButtonElement>
+    event:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.MouseEvent<HTMLButtonElement>
   ) => {
     const value =
       event instanceof MouseEvent
@@ -31,32 +32,25 @@ const PLP = () => {
     setFacets(facet);
   };
 
-  const toggleFilterModal = () => {
-    setFilterModalOpen(!isFilterModalOpen);
-  };
-
   return (
     <div className="product-listing-page">
       <div data-plp-header>
-        <CustomText text="Blusas" />
-        <OrderBySelect value={orderBy} onChange={handleOrderByChange} />
-        {isMobile && (
-          <div>
-            <CustomButton onClick={toggleFilterModal} label="Filtrar" />
-          </div>
-        )}
+        <CustomText text="Blusas" data-plp-section-title/>
+        <div data-plp-buttons-container>
+          <OrderBySelect value={orderBy} onChange={handleOrderByChange} />
+          <FilterMobile
+            isMobile={isMobile}
+            onFacetChange={handleOnFacetChange}
+          />
+        </div>
       </div>
       <div data-listing-content>
-        {!isMobile && <FilterDesktop onFacetChange={handleOnFacetChange} />}
-        <ProductGallery orderBy={orderBy} facets={facets} />
+        <FilterDesktop
+          isMobile={isMobile}
+          onFacetChange={handleOnFacetChange}
+        />
+        <ProductGallery isMobile={isMobile} orderBy={orderBy} facets={facets} />
       </div>
-      <Modal
-        isOpen={isFilterModalOpen}
-        onClose={toggleFilterModal}
-        title="Filtrar"
-      >
-        <FilterMobile onFacetChange={handleOnFacetChange} />
-      </Modal>
     </div>
   );
 };

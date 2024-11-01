@@ -12,7 +12,7 @@ interface FullscreenModalProps {
   children: React.ReactNode;
 }
 
-const Modal = ({ isOpen, onClose, title, children }: FullscreenModalProps) => {
+const Modal = ({ isOpen, onClose, title, children, ...props }: FullscreenModalProps) => {
   if (!isOpen) return null;
 
   return (
@@ -26,7 +26,7 @@ const Modal = ({ isOpen, onClose, title, children }: FullscreenModalProps) => {
         />
           
       </div>
-      <div data-modal-content>
+      <div data-modal-content {...props}>
         {children}
       </div>
     </div>

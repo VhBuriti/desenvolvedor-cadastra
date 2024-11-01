@@ -4,6 +4,9 @@
 @import "mixins";
 
 html {
-    font-family: "Open Sans", sans-serif;
-
+    height: 100vh;
+    font-family: "Open Sans", serif;
+    body, #root {
+        height: 100vh;
+    }
 }

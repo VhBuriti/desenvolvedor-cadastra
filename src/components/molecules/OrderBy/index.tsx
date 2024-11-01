@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useDeviceInfo from "../../../hooks/useDevice";
 import CustomButton from "../../atoms/Button";
 import Modal from "../Modal";
+import './index.scss';
 
 interface OrderBySelectProps {
   value: string;
@@ -28,25 +29,26 @@ const OrderBySelect = ({ value, onChange }: OrderBySelectProps) => {
   if (isMobile === true) {
     return (
       <div>
-        <CustomButton onClick={toggleOrderByModal} label="Ordenar" />
+        <CustomButton data-open-modal-btn onClick={toggleOrderByModal} label="Ordenar" />
         <Modal
+          data-order-by-overlay
           isOpen={isOrderByModalOpen}
           onClose={toggleOrderByModal}
           title="Ordenar"
         >
           <CustomButton
-            label={"most-recent"}
-            value="Mais recentes"
+            value={"most-recent"}
+            label="Mais recentes"
             onClick={handleButtonClick}
           />
           <CustomButton
-            label={"increasing"}
-            value="Menor preo"
+            value={"increasing"}
+            label="Menor preo"
             onClick={handleButtonClick}
           />
           <CustomButton
-            label={"decreasing"}
-            value="Maior preço"
+            value={"decreasing"}
+            label="Maior preço"
             onClick={handleButtonClick}
           />
         </Modal>

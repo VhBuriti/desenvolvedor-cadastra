@@ -8,9 +8,11 @@ import CustomButton from "../../atoms/Button";
 import { useFilterProducts } from "../../../hooks/useFilterProducts";
 import OrderBy from "../../../utils/OrderBy";
 
-const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy }) => {
+const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy, isMobile }) => {
+
+  const productsCount = isMobile ? 4 : 9
   const [products, setProducts] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(9);
+  const [visibleCount, setVisibleCount] = useState(productsCount);
   const [galleryProducts, setGalleryProducts] = useState([]);
 
   useEffect(() => {
@@ -20,16 +22,17 @@ const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy
     })();
   }, []);
 
+
   useEffect(() => {
     const filteredProducts = useFilterProducts(products, { facets });
     const orderedProducts = OrderBy({ products: filteredProducts, orderBy });
     
     setGalleryProducts(orderedProducts);
-    setVisibleCount(9);
+    setVisibleCount(productsCount);
   }, [products, facets, orderBy]);
 
   const handleShowMore = () => {
-    setVisibleCount((prevCount) => Math.min(prevCount + 9, galleryProducts.length));
+    setVisibleCount((prevCount) => Math.min(prevCount + productsCount, galleryProducts.length));
   };
 
   return (
@@ -47,6 +50,7 @@ const ProductGallery: React.FC<ProductGalleryProps<string>> = ({ facets, orderBy
           )
         })}
       </div>
+      
       <div data-gallery-show-more-container>
         {visibleCount < galleryProducts.length && (
           <CustomButton

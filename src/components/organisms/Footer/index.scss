@@ -2,8 +2,8 @@
 
 .footer-container {
     display: flex;
-    position: relative;
-    bottom: 0;
+    position: relative !important;
+    bottom: 0 !important;
     width: 100%;
     justify-content: center;
     align-items: center; 

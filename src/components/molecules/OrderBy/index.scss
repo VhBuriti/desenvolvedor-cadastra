@@ -1,0 +1,12 @@
+[data-order-by-overlay] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .custom-button {
+    font-size: 22px;
+    font-weight: 29.96px;
+    border: none;
+    margin-bottom: 30px;
+    background-color: transparent;
+  }
+}

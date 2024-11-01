@@ -1,46 +1,63 @@
 @import "../../../scss/main.scss";
 
 .product-listing-page {
-    [data-plp-header] {
+  [data-plp-header] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 24px 0 34.39px 0;
+
+    [data-plp-buttons-container] {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin: 24px 0 12px 0;
-        
-        .custom-text {
-            font-size: 32px;
-            line-height: 43.58px;
-            color: $darker-gray;
-            height: 44px;
-        }
-        
-        .orderby-button {
-            width: 142px;
-            height: 42px;
-            font-size: 16px;
-            line-height: 21.79px;
-            border: 1px solid $primary-gray;
-            padding: 10px 0 10px 10px;
-            
-            [data-orderby-option] {
-                background-color: $reverted-text;
-                color: $base-text;
-                padding: 10px 0 10px 10px;
-            }
-        }
-        
-        @include desktop {
-            margin: 40px 0 65px 0;
+        [data-open-modal-btn]{
+            width: 172px;
+            margin-top: 12px;
+            background-color: transparent;
+            border: 1px solid $secondary-gray;
+            color: $secondary-gray;
+            font-size: 24px;
+            line-height: 32.68px;
+            &:nth-child(2) {
+                border-left: none; 
+              }      
         }
     }
-    
+
+    [data-plp-section-title] {
+      font-size: 32px;
+      line-height: 43.58px;
+      color: $darker-gray;
+      height: 44px;
+    }
+    .orderby-button {
+      width: 142px;
+      height: 42px;
+      font-size: 16px;
+      line-height: 21.79px;
+      border: 1px solid $primary-gray;
+      padding: 10px 0 10px 10px;
+
+      [data-orderby-option] {
+        background-color: $reverted-text;
+        color: $base-text;
+        padding: 10px 0 10px 10px;
+      }
+    }
+
     @include desktop {
-        width: 79%;
-        margin: 0 auto;
-        [data-listing-content] {
-            display: flex;
-            gap: 48px;
-        }
+      flex-direction: row;
+      margin: 40px 0 65px 0;
     }
+  }
+
+  @include desktop {
+    width: 79%;
+    margin: 0 auto;
+    [data-listing-content] {
+      display: flex;
+      gap: 48px;
+    }
+  }
 }
