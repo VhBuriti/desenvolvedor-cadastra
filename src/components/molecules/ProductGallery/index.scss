@@ -14,12 +14,10 @@
       max-width: 976px;
       padding: 0;
       grid-template-columns: repeat(auto-fit, minmax(192px, 1fr)); 
+      padding: 0 13.43%;
       .product-card {
         margin: 0 auto;
       }
-    }
-    @include big-desktop {
-      padding: 0 131.12px;
     }
   }
   @include desktop {
